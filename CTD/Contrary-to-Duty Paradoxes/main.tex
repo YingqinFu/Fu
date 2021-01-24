@@ -1,0 +1,179 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[nottoc]{tocbibind}
+\usepackage{ amssymb }
+\usepackage{enumerate}
+
+\title{Contrary-to-Duty Paradoxes}
+\author{Yingqin Fu 702065 Markus Davydov 690672 }
+\date{December 2020}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\section*{Abstract}
+We will discuss the first problem of Denotic Logic,the so-called Contrary-to-duty (CTD) in this paper.A contrary-to-duty obligation tells us,what we ougt to do if something is forbidden.Which is very important in our moral and legal thinking.So we want to discuss the problem with different deontic logic systems,and try to find a way to explain it.\\
+Index Terms:contrary-to-duty Paradoxes(CTD),Chisholm’s paradox,Standard deontic logic(SDL)
+\section*{Introduction}
+What is contrary-to-duty obligation?And why is it a Paradoxes? A contrary-to-duty obligation is an obligation telling us what ought to be the case if something forbidden is true. Here are some examples of sentences that often express such obligations: ‘If she is guilty, she should confess’, ‘If he has hurt his friend, he should apologise to her’, ‘If you are not going to keep your promise to him, you ought to call him’, ‘If the books are not returned by the due date, you must pay a fine’. In this paper we will summarize the first part of the paper"Multiagent Deontic Logic and its Challenges from a Normative Systems Perspective "\cite{1} 
+\section{ Chisholm's paradox}
+First of all,We are going to introduce first the so-called Chisholm's paradox\cite{2},which is know as one of the earliest CTD paradox.
+Chisholm's paradox consists of the following four sentences:
+\begin{enumerate}
+\item  It ought to be that a certain man go to the assistance of his neighbours.
+\item  It ought to be that if he does go, he tell them he is coming.
+\item If he does not go then he ought not to tell them he is coming.
+\item He does not go.
+\end{enumerate}
+Chisholm’s paradox is a contrary-to-duty paradox, since it contains both a primary obligation to go, and a secondary obligation not to tell if the agent does not go.\\
+There are various kinds of scenarios which are similar to Chisholm’s scenario.For example, van Benthem, Grossi and Liu \cite{3} givethe following example, in the formulation proposed by Åqvist:\\
+\begin{description}
+\item[(1)] It ought to be that Smith refrains from robbing Jones.
+\item[(2)] Smith robs Jones.
+\item[(3)]If Smith robs Jones, he ought to be punished for robbery.
+\item[(4)]It ought to be that if Smith refrains from robbing Jones he is not punished
+for robbery.
+\end{description}
+
+
+
+Contrary-to-duty obligations turn up in discussions concerning guilt, blame, restoration, reparation, confession, punishment, repentance, retributive justice, compensation, apologies, damage control, etc. Therefore, they are important in our moral and legal thinking. The rationale of a contrary-to-duty obligation is the fact that most of us do neglect our primary duties from time to time and yet it is reasonable to believe that we should make the best of a bad situation, or at least that it matters what we do when this is the case. Everyone needs to find a way,that tells us what to do, when we don't finish the things we ought to do.In this paper,we will try to find a adequate formal representation of such obligations.
+\section{Monadic deontic logic}
+Traditional or ‘standard’ deontic logic, often referred to as SDL, was introduced by
+Von Wright\cite{4} 
+\subsection{language}
+Given two arbitrary formulas $\phi$  and $\varphi$, then\\
+$\perp$:the empty symbol\\
+$\neg$ $\varphi$: classical negation\\
+$\varphi \vee  \phi $: classical disjunction\\
+$\bigcirc \varphi $: $\varphi$ is obligatory\\
+$ \neg \bigcirc\neg\varphi$: $ \varphi$ is forbidden\\
+$ \square\varphi$: $\varphi$ is necessary
+\subsection{Semantics}
+\begin{description}
+\item[$\bullet$ ] let $\nu$ be a valuation function on AP
+\item[$\bullet $]  let M = (W, R) A kripke model with on worlds W related via R : W × W
+\item[$\bullet $]  "M,s $ \vDash \varphi$" is read a state s satisfies $\varphi$ in the Model M,we define the satisfaction relation M,s $ \vDash \varphi$ by induction on $\varphi$ using the clauses:
+\begin{description}
+\item[$\bullet$ ]M, s $ \vDash $ p iff s $\in$ $\nu$  (p)
+\item[$\bullet$ ]M, s $ \vDash $ $\neg \varphi$ iff not M, s $ \vDash $ $\varphi$
+\item[$\bullet$ ]M, s $ \vDash $ $(\varphi\land\phi )$ iff M,s $ \vDash \varphi$ and  M,s $ \vDash \phi$
+\item[$\bullet$ ]M, s $ \vDash  \bigcirc\varphi$ iff for all t,if Rst then M, t$\vDash \varphi$
+\item[$\bullet$ ]M, s $ \vDash  \square\varphi$ iff for all t $\in$ W, M, t $\vDash \varphi$
+\end{description}
+\end{description}
+Axioms for Standard Deontic Logic:
+\begin{enumerate}
+\item Taut: All tautologies are Well formed formulas of the language.
+\item  $Axiom K: O(p \to q) \to (O(p) \to O(q)) $
+\item $ Axiom D: O(p) \to \neg O(\neg p)$
+\item $Modus Ponens: ((p \to q) \land p) \to q $
+\item $ Necessity: p \to O(p)$
+\end{enumerate}
+\subsection{Limitations}
+Now we focus on the Chisholm'paradox with the Monadic deontic logic.
+We can describe the four sentences of Chisholm'paradox with the Monadic Deontic logic(h:= he goes to help his neighbours; t:=he tell them),we have four different ways to describe them:
+\begin{enumerate}
+\item $(1)O(h);(2)O(h\to t);(3)O(\neg h\to \neg t);(4) \neg h$
+\item $(1)O(h);(2)O(h \to t);(3) \neg h \to O (\neg t); (4) \neg h$
+\item $(1)O(h);(2)h\to O(t);(3)\neg h \to O(\neg t) ;(4)\neg h $
+\item $ (1)O(h);(2)h\to O(t)(3)O(\neg h\to \neg t)(4)\neg h$
+\end{enumerate}
+Now we foucs on the above-mentioned four SDL descriptions:
+\begin{enumerate}
+\item From (4) and Axiom 5 ,we get $O(\neg h) $ ;From (1) and (2),we get O(t);From $O(\neg h)$ and (3),we get $ O(\neg t)$. Obviously,O(t) and $O(\neg t)$
+is paradox.
+\item From (3) and (4) with Axiom MP,we get $O(\neg t)$;From (2) and Axiom K,we get $O(h)\to O(t) $;which with (1) and Axiom MP,we get O(t)
+\item We know that,$ \neg h \to (h \to O(t))$ is Taut,which with (4) can we get $ h \to O(t)$.it is identical to (2).Hence,it's redundant.
+\item It's redundant with the same reason of 3.
+\end{enumerate}
+Hence,we can conclude,that under the Monadic Deontic Logic(SDL) the CTD is
+inconsistent and redundant.Something must be wrong with our formalisation, with SDL or with our intuitions. In a nutshell, this puzzle is the contrary-to-duty
+(obligation) paradox.\\
+
+So how can we overcome the limitation of SDL?Can we extend the semantics of SDL?For example,one can add distinct modal operators for primary and secondary obligations, where a secondary obligation is a kind of reparational obligation.So with the Chisholm’s paradox,we regard 1 and 2 as primary obligation(he ought to go),3 as secondary obligation(he ought to tell his neighbours).So the sentences are now:
+\begin{description}
+\item[(1)] $\bigcirc$1 h
+\item[(2)]$\bigcirc$1 ($h \to t $)
+\item[(3)]$\neg h \to \bigcirc 2 (\neg t)$
+\item[(4)]$\neg h$
+\end{description}
+From 1-4 we can derive only $\bigcirc 1 \neg t \wedge \bigcirc 2 t$,which is consistent.\\
+Seems like we find a good way to solve the limitation of SDL.However,it may not always be easy to distinguish primary from secondary obligations, because it may depend on the context whether an obligation is primary or secondary. It's not easy for us to describe the ideal world with this solution. 
+\section{Dyadic deontic logic}
+Dyadic deontic logic(or Dyadic Standard Deontic Logic ) is the logic for reasoning with dyadic obligations (“it ought to be the case that ... if it is the case that ...").In this section, we will try to describe CTD with DDL.
+\subsection{Language}
+Given two arbitrary formulas $\phi$  and $\varphi$, then\\
+$\perp$:the empty symbol\\
+$\neg$ $\varphi$: classical negation\\
+$\varphi \vee  \phi $: classical disjunction\\
+$\bigcirc \varphi $: $\varphi$ is obligatory\\
+$ \neg \bigcirc\neg\varphi$: $ \varphi$ is forbidden\\
+$ \square\varphi$: $\varphi$ is necessary\\
+$\bigcirc(\varphi\mid\phi$): It ought to be $\varphi$,given $\phi$\\
+$P(\varphi\mid\phi) $:$\varphi$ is permitted,given $\phi$,as an abbreviation of $\neg\bigcirc(\neg\varphi\mid\phi)$\\
+$\lozenge(\varphi)$:possibly $\varphi$,as an abbreviation of $\neg\square\neg\varphi$
+\subsection{Semantics}
+A preference model M = (W, $\geq$, V ) is a structure where:
+\begin{description}
+\item[$\bullet$ ] W is a nonempty set of worlds.
+\item[$\bullet $] $ \geq$ is a reflexive, transitive relation over W satisfying the following limitedness requirement: if $\|\varphi\| \neq \emptyset, then {x\in\|\varphi\| : (\forall y \in \|\varphi\|)x\geq y} \neq \emptyset. Here\|\varphi\| = {x \in W : M, x\vDash \varphi}.$
+\item[$\bullet$]V is a standard propositional valuation such that for every propositional letter p, V (p) $\subseteq$ W.
+\begin{description}
+\item[$\bullet$ ]M, s $ \vDash $ p iff s $\in$ $\nu$  (p)
+\item[$\bullet$ ]M, s $ \vDash $ $\neg \varphi$ iff not M, s $ \vDash $ $\varphi$
+\item[$\bullet$ ]M, s $ \vDash $ $(\varphi\land\phi )$ iff M,s $ \vDash \varphi$ and  M,s $ \vDash \phi$
+\item[$\bullet$ ]M, s $ \vDash  \bigcirc(\phi\mid\varphi) iff \forall t(((M, t \vDash \varphi)\with\forall u(M, u \vDash \varphi) \Rightarrow t \geq u) \Rightarrow M, t \vDash \phi)$
+\item[$\bullet$ ]M, s $ \vDash  \square\varphi$ iff for all t $\in$ W, M, t $\vDash \varphi$
+\end{description}
+\end{description}
+\subsection{Limitations}
+The following example is a variant of the scenario originally phrased by Chisholm in
+1963. There is widespread agreement in the literature that, from the intuitive point
+of view, this set of sentences is consistent, and its members are logically independent
+of each other.
+\begin{description}
+\item[A]It ought to be that Jones does not eat fast food for dinner.
+\item[B]It ought to be that if Jones does not eat fast food for dinner, then he does not go to McDonald’s.
+\item[C] If Jones eats fast food for dinner, then he ought to go to McDonald’s.
+\item[D]Jones eats fast food for dinner.
+\end{description}
+We try to discribe the above-mentioned sentences with DSDL(f:Jones eats fast food for dinner;m:he goes to McDonald’s ):
+\begin{description}
+\item[A]$\bigcirc$f
+\item[B]$\bigcirc(\neg m \mid \neg f)$
+\item[C]$\bigcirc(m\mid f)$
+\item[D]f
+\end{description}
+the dyadic representation A - D highlights the dilemma between factual detachment (FD) and deontic detachment (DD)\\
+FD:$\bigcirc(m\mid f),f \Rightarrow \bigcirc m$\\
+DD:$\bigcirc(\neg m \mid \neg f), \bigcirc\neg f \Rightarrow \bigcirc\neg m$\\
+We cannot have both FD and DD, as we derive a dilemma:$\bigcirc\neg m\wedge\bigcirc m$\\
+Hence,there is also something wrong with the DSDL,when we try to describe CTD paradox.
+The main drawback of DSDL is that in a monotonic setting, we cannot detach
+the obligation $\bigcirc m$ from the four sentences.
+\section{Defeasible Deontic Logic: detachment and constraints}
+We all know that,Deontic logic is the logic of obligations, i.e. reasoning about what should be the case. Defeasible logic is the logic of default assumptions, i.e. reasoning about what normally is the case.In defeasible deontic logic(DDLs) these two are combined.Defeasible deontic logics (DDLs) use techniques developed in non-monotonic logic.A drawback of the use of non-monotonic techniques is that we often have that
+violated obligations are no longer derived.\\
+The more details about the defeasible deontic logic will be in Section 8 of the "Multiagent deontic logic and its challengesfrom a normative systems perspective".
+\section{Alternative approaches}
+Carmo and Jones \cite{5} suggest that the representation of the facts is challenging,
+instead of the representation of the norms. In their approach, depending on the
+formalisation of the facts various obligations can be detached.\\
+Another approach to Chisholm’s paradox is to detach both obligations of the
+dilemma  $\neg$m $\wedge$ m, and represent them consistently using some kind of minimal
+deontic logic, for example using techniques from paraconsistent logic. From a practical reasoning point of view, a drawback of this approach is that a dilemma is not
+very useful as a moral cue for action. Moreover, intuitively it is not clear that the
+example presents a true dilemma.More about the dilemmas will be in Section 9.\\
+
+Daniel Rönnedal\cite{6} suggests,we can use the Counterfactual Deontic Logic to solve the Contrary-to-Duty Paradoxes.\\
+Nowadays more and more logic researchers focus on the CTD Paradoxes,and build different
+deontic logic systems.
+\section{Conclusion}
+
+
+\bibliographystyle{unsrt}
+\bibliography{books}
+\end{document}
+ 
