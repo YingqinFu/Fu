@@ -14,7 +14,7 @@
 \tableofcontents
 \section*{Abstract}
 We will discuss the first problem of Denotic Logic,the so-called Contrary-to-duty (CTD) in this paper.A contrary-to-duty obligation tells us,what we ougt to do if something is forbidden.Which is very important in our moral and legal thinking.So we want to discuss the problem with different deontic logic systems,and try to find a way to explain it.\\
-Index Terms:contrary-to-duty Paradoxes(CTD),Chisholm’s paradox,Standard deontic logic(SDL)
+Keywords:contrary-to-duty Paradoxes(CTD),Chisholm’s paradox,Standard deontic logic(SDL)
 \section*{Introduction}
 What is contrary-to-duty obligation?And why is it a Paradoxes? A contrary-to-duty obligation is an obligation telling us what ought to be the case if something forbidden is true. Here are some examples of sentences that often express such obligations: ‘If she is guilty, she should confess’, ‘If he has hurt his friend, he should apologise to her’, ‘If you are not going to keep your promise to him, you ought to call him’, ‘If the books are not returned by the due date, you must pay a fine’. In this paper we will summarize the first part of the paper"Multiagent Deontic Logic and its Challenges from a Normative Systems Perspective "\cite{1} 
 \section{ Chisholm's paradox}
@@ -26,8 +26,10 @@ Chisholm's paradox consists of the following four sentences:
 \item If he does not go then he ought not to tell them he is coming.
 \item He does not go.
 \end{enumerate}
-Chisholm’s paradox is a contrary-to-duty paradox, since it contains both a primary obligation to go, and a secondary obligation not to tell if the agent does not go.\\
-There are various kinds of scenarios which are similar to Chisholm’s scenario.For example, van Benthem, Grossi and Liu \cite{3} givethe following example, in the formulation proposed by Åqvist:\\
+Chisholm’s paradox is a contrary-to-duty paradox, since it contains both a primary obligation to go, and a secondary obligation not to tell if the agent does not go.Yet intuitively the natural-language expressions
+that make up the paradox are consistent and independent from each other: this is
+why it is called a paradox.\\
+There are also various kinds of scenarios which are similar to Chisholm’s scenario.For example, van Benthem, Grossi and Liu \cite{3} givethe following example, in the formulation proposed by Åqvist:\\
 \begin{description}
 \item[(1)] It ought to be that Smith refrains from robbing Jones.
 \item[(2)] Smith robs Jones.
@@ -89,7 +91,7 @@ is paradox.
 \item It's redundant with the same reason of 3.
 \end{enumerate}
 Hence,we can conclude,that under the Monadic Deontic Logic(SDL) the CTD is
-inconsistent and redundant.Something must be wrong with our formalisation, with SDL or with our intuitions. In a nutshell, this puzzle is the contrary-to-duty
+\textbf{inconsistent} and \textbf{redundant}.Something must be wrong with our formalisation, with SDL or with our intuitions. In a nutshell, this puzzle is the contrary-to-duty
 (obligation) paradox.\\
 
 So how can we overcome the limitation of SDL?Can we extend the semantics of SDL?For example,one can add distinct modal operators for primary and secondary obligations, where a secondary obligation is a kind of reparational obligation.So with the Chisholm’s paradox,we regard 1 and 2 as primary obligation(he ought to go),3 as secondary obligation(he ought to tell his neighbours).So the sentences are now:
@@ -102,7 +104,7 @@ So how can we overcome the limitation of SDL?Can we extend the semantics of SDL?
 From 1-4 we can derive only $\bigcirc 1 \neg t \wedge \bigcirc 2 t$,which is consistent.\\
 Seems like we find a good way to solve the limitation of SDL.However,it may not always be easy to distinguish primary from secondary obligations, because it may depend on the context whether an obligation is primary or secondary. It's not easy for us to describe the ideal world with this solution. 
 \section{Dyadic deontic logic}
-Dyadic deontic logic(or Dyadic Standard Deontic Logic ) is the logic for reasoning with dyadic obligations (“it ought to be the case that ... if it is the case that ...").In this section, we will try to describe CTD with DDL.
+Dyadic deontic logic(or Dyadic Standard Deontic Logic ) is the logic for reasoning with dyadic obligations (“it ought to be the case that ... if it is the case that ...").In this section, we will try to describe CTD with DDL ,and try to find out a .
 \subsection{Language}
 Given two arbitrary formulas $\phi$  and $\varphi$, then\\
 $\perp$:the empty symbol\\
@@ -168,10 +170,31 @@ very useful as a moral cue for action. Moreover, intuitively it is not clear tha
 example presents a true dilemma.More about the dilemmas will be in Section 9.\\
 
 Daniel Rönnedal\cite{6} suggests,we can use the Counterfactual Deontic Logic to solve the Contrary-to-Duty Paradoxes.\\
-Nowadays more and more logic researchers focus on the CTD Paradoxes,and build different
-deontic logic systems.
+A recent representation of Chisholm'paradox is to replace deonitc detachment by so-called aggregative deontic detachment(ADD),and to derive from A-D the obligation  $(\neg f \wedge \neg m)$and m, but not $\neg $m.\\
+$\bigcirc (m|f),f \Rightarrow \bigcirc m $ FD\\
+$\bigcirc(\neg m |\neg f),\bigcirc\neg f \Rightarrow \bigcirc(\neg m \wedge \neg f)$ ADD\\
+The limitation of this approaches is that we can no longer accept the principle of weakening(also known as inheritance). 
+$\bigcirc(\neg m \wedge\neg f|\top) \Rightarrow \bigcirc(\neg m |\top)$\\
+Nowadays more and more logic researchers focus on the CTD Paradoxes,and build different deontic logic systems.When a new deontic logic is proposed,the traditional contrary-to-duty examples are always the first benchmark examples to be checked.
 \section{Conclusion}
+With the limited Knowlwdge about the deontic logic,we cannot find a perfect adequate formal representation of the CTD obligation.In our opinion,the key point of CTD Paradoxs is that how can we find a adequate formel to deal with the relationship between \textbf{obligation} and \textbf{condition}.
+Consider the sentence from section 3:
+\begin{description}
+\item[B] It ought to be that if Jones does not eat fast food for dinner, then he does not go to McDonald’s.
+\end{description}
+which can be formed as:
+\begin{description}
+\item[$\bullet $]$\bigcirc (\neg f \rightarrow\neg m)$
+\end{description}
 
+However, in our opinion,"if Jones does not eat fast food for dinner "is a \textbf{condition} (instead of obligation) of "he ought to not go to McDonald's".We cannot lump these two concepts together.
+So the better form should be:
+\begin{description}
+\item[$\bullet$]$ \neg f \rightarrow \bigcirc \neg m$
+\end{description}
+However,this is also redundant due to $f \vDash\neg f \rightarrow \bigcirc \neg m $\\
+We always find a limitation,when we try to form CTD with deontic logic,especially SDL.More and more approaches are proposed.Many researchers also build the binary deontic logic to solve them......When a new deontic logic is proposed, the traditional contrary-to-duty examples are always the first benchmark examples to be checked,which is always the biggest challenge of DL System.What's more,it is also a challenge for our own moral life and law system.
+Perhaps there is not an eternal solution to solve the paradoxes entirely.But with the research on all the challenges for multiagent deontic logic,the law system will be more and more perfect,our obligation and violation will be more and more clear... 
 
 \bibliographystyle{unsrt}
 \bibliography{books}
